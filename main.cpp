@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
         }
 
         std::string result = std::string(argv[i]) + "_cmpr.jpg";
-        int desired_quality = 50;
+        int desired_quality = 80;
         if (image.w <= 800 && image.h <= 600)
         {
             desired_quality = 100;
