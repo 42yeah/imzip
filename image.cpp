@@ -12,10 +12,9 @@
 #define STB_IMAGE_RESIZE_IMPLEMENTATION
 #include <stb/stb_image_resize.h>
 
-constexpr int num_ch = 4;
 int id = 0;
 
-Image::Image() : w(0), h(0), ch(num_ch), image(nullptr), id_(::id++), initialized(false)
+Image::Image() : w(0), h(0), ch(4), image(nullptr), id_(::id++), initialized(false)
 {
 
 }
