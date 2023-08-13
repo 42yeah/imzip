@@ -34,14 +34,15 @@ int main(int argc, char *argv[])
             }
         }
 
-        if (!image.save_compressed(std::string(argv[i]) + "_cmpr.jpg", 50))
+        std::string result = std::string(argv[i]) + "_cmpr.jpg";
+        if (!image.save_compressed(result, 50))
         {
             std::cerr << "ERROR: cannot save: " << argv[i] << std::endl;
             errors++;
             continue;
         }
 
-        std::cout << argv[i] << std::endl;
+        std::cout << result << std::endl;
     }
 
     return errors;
