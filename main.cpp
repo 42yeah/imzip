@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 
         if (!image.load(argv[i]))
         {
-            std::cerr << "ERROR: cannot open " << argv[i] << std::endl;
+            std::cout << "ERROR: cannot open " << argv[i] << std::endl;
             errors++;
             continue;
         }
@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
         {
             if (!image.resize(image.w / 2, image.h / 2))
             {
-                std::cerr << "ERROR: cannot resize: " << argv[i] << std::endl;
+                std::cout << "ERROR: cannot resize: " << argv[i] << std::endl;
                 errors++;
                 continue;
             }
@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
         std::string result = std::string(argv[i]) + "_cmpr.jpg";
         if (!image.save_compressed(result, 50))
         {
-            std::cerr << "ERROR: cannot save: " << argv[i] << std::endl;
+            std::cout << "ERROR: cannot save: " << argv[i] << std::endl;
             errors++;
             continue;
         }
