@@ -35,7 +35,12 @@ int main(int argc, char *argv[])
         }
 
         std::string result = std::string(argv[i]) + "_cmpr.jpg";
-        if (!image.save_compressed(result, 50))
+        int desired_quality = 50;
+        if (image.w <= 800 && image.h <= 600)
+        {
+            desired_quality = 100;
+        }
+        if (!image.save_compressed(result, desired_quality))
         {
             std::cout << "ERROR: cannot save: " << argv[i] << std::endl;
             errors++;
